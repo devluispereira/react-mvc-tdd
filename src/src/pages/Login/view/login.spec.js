@@ -85,4 +85,16 @@ describe("Test page Login", () => {
       expect(checkbox.checked).toBe(false);
     });
   });
+  describe("Test Content", () => {
+    it("should test render Content", () => {
+      render(<Login />);
+      expect(screen.getByText("Welcome !")).toBeInTheDocument();
+    });
+
+    it("should test render Logo", () => {
+      const sut = render(<Login />);
+
+      expect(sut.getByTestId("logo")).toBeInTheDocument();
+    });
+  });
 });
